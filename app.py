@@ -3,8 +3,8 @@ import streamlit as st
 
 from message_log import message_log
 
-api_key = "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"
-openai.api_key = api_key
+api_key = "XBX75nDxXBtfFhaEo0MOJFkblB3TnymvoqeqrbZ3otw8l81R-ks"
+openai.api_key = api_key[::-1]
 
 def generate_response(message_log):
     response = openai.ChatCompletion.create(
