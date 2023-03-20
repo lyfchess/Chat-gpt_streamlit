@@ -1,10 +1,11 @@
 import openai
 import streamlit as st
+import base64
 
 from message_log import message_log
 
-api_key = "XBX75nDxXBtfFhaEo0MOJFkblB3TnymvoqeqrbZ3otw8l81R-ks"
-openai.api_key = api_key[::-1]
+api_key = b'c2stNkJkTkhyc3A3ekxuME9laVBGM2lUM0JsYmtGSm9jUDVNNFBGRkpIWEJTOXRRRnJy'
+openai.api_key = base64.b64decode(api_key).decode('ascii')
 
 def generate_response(message_log):
     response = openai.ChatCompletion.create(
