@@ -9,7 +9,7 @@ openai.api_key = base64.b64decode(api_key).decode('ascii')
 
 def generate_response(message_log):
     response = openai.ChatCompletion.create(
-        model="gpt-3.5-turbo",  # The name of the OpenAI chatbot model to use
+        model="gpt-4",  # The name of the OpenAI chatbot model to use
         messages=message_log,  # The conversation history up to this point, as a list of dictionaries
         temperature=0.7,  # The "creativity" of the generated response (higher temperature = more creative)
     )
@@ -25,7 +25,7 @@ def generate_response(message_log):
 
 st.set_page_config(page_title="Xi_chat_gpt")
 
-st.markdown("# 当前使用模型为gpt-3.5-turbo")
+st.markdown("# 当前使用模型为gpt-4")
 # 增加一个按钮，点击后清空对话记录，重新开始对话
 if st.button('重制对话'):
     st.balloons()
